@@ -31,7 +31,7 @@ class AuthController extends Controller
         if (!$token) {
             //gagal login
             return response()->json([
-                "succes" => false,
+                "success" => false,
                 "pesan"  => "login failed"
             ], 404);
 
@@ -39,7 +39,7 @@ class AuthController extends Controller
 
         //berhasil login
         return response()->json([
-            "succes"       => true,
+            "success"       => true,
             "access_token" => $token,
             "token_type"   => "Bearer",
             "expires_in"   => auth('jwt')->factory()->getTTL()
@@ -61,7 +61,7 @@ class AuthController extends Controller
         }
 
         return response()->json([
-            "succes" => true,
+            "success" => true,
             "data"   => $data
         ], 200);
     }
