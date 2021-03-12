@@ -15,18 +15,18 @@ class DosenController extends Controller
 {
     public function register(Request $request)
     {
-        $validation = $request->validate([
-            "name"     => "required",
-            "email"    => "required|unique:users,email",
-            "username" => "required|unique:users,username",
-            "password" => "required|min:6",
-            "nid"      => "required",
-            "address"  => "required",
-            "phone"    => "required",
-            "bio"      => "required",
-            "photo"    => "mimes:jpeg,png,jpg|max:5120"
+        // $validation = $request->validate([
+        //     "name"     => "required",
+        //     "email"    => "required|unique:users,email",
+        //     "username" => "required|unique:users,username",
+        //     "password" => "required|min:6",
+        //     "nid"      => "required",
+        //     "address"  => "required",
+        //     "phone"    => "required",
+        //     "bio"      => "required",
+        //     "photo"    => "mimes:jpeg,png,jpg|max:5120"
 
-        ]);
+        // ]);
 
         if ($request->has("photo")) {
             $photo = date("YmdHis") . Str::random(10) . "." . $request->photo->extension();

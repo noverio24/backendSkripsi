@@ -39,10 +39,13 @@ Route::name("api.v1.")->prefix("v1")->namespace('Api\v1')->group(function (){
         //registermahasiswa
         Route::post("register","MahasiswaController@register")->name("register");
     });
+
+    //Route Subject
+    Route::name("subject.")->prefix("subject")->group(function (){
+        Route::get("/","Subject@index")->name("index");
+        Route::post("/","Subject@store")->name("store");
+    });
 });
-
-
-
 
 
 
@@ -74,4 +77,6 @@ Route::post("/kirim",function(Request $request){
 
     return "Nama : {$nama} <br> Umur : {$umur}";
 });
+
+
 
