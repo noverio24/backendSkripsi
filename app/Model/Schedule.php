@@ -6,20 +6,15 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Dosen extends Model
+class Schedule extends Model
 {
-    protected $table = "dosen";
+    protected $table = "schedule";
 
     protected $fillable = [
-        "name",
-        "nid",
-        "address",
-        "phone",
-        "bio",
-        "photo",
+        "subject_id",
+        "time",
+        "day",
     ];
-
-    protected $appends = ["url_photo"];
 
     public function getUrlPhotoAttribute()
     {

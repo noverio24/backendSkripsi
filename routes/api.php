@@ -33,6 +33,18 @@ Route::name("api.v1.")->prefix("v1")->namespace('Api\v1')->group(function (){
        //register Dosen
         Route::post("register","DosenController@register")->name("register");
     });
+   
+    //Route Subject
+    Route::name("subject.")->prefix("subject")->group(function (){
+       //
+        Route::get("/","SubjectController@index")->name("index");
+       //
+        Route::post("store","SubjectController@store")->name("store");
+        //
+        Route::put("/update","SubjectController@update")->name("update");
+        //
+        Route::delete("/delete","SubjectController@delete")->name("delete");
+    });
 
     //Route Mahasiswa
     Route::name("mahasiswa.")->prefix("mahasiswa")->group(function (){
@@ -40,11 +52,7 @@ Route::name("api.v1.")->prefix("v1")->namespace('Api\v1')->group(function (){
         Route::post("register","MahasiswaController@register")->name("register");
     });
 
-    //Route Subject
-    Route::name("subject.")->prefix("subject")->group(function (){
-        Route::get("/","Subject@index")->name("index");
-        Route::post("/","Subject@store")->name("store");
-    });
+
 });
 
 

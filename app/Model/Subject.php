@@ -6,17 +6,19 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mahasiswa extends Model
+class Subject extends Model
 {
-    protected $table = "mahasiswa";
+    protected $table = "subjects";
 
     protected $fillable = [
         "name",
-        "nid",
-        "address",
-        "phone",
-        "bio",
-        "photo",
+        "code",
+        "description",
+        "schedule",
+        "notedWeek",
+        "time",
+        "namaMatkul",
+        "nilaiPresent",
     ];
 
     protected $appends = ["url_photo"];
